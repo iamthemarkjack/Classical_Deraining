@@ -2,7 +2,7 @@
 After a comparison in both our codes, we finalised to use deraining using priors for final project evaluation. \
 To run the codes, 
 - A folder in the same directory named `Validation_set` must contain two folders: `Binary_mask` and `rain`. 
-- Running the code saves the predicted rain mask of each image in the prediction folder and makes a csv file of the IOU scores. 
+- Running the code saves the predicted rain mask of each image in the `prediction` and makes a csv file of the IOU scores. 
 
 Specific instructions
 1. Layers with priors
