@@ -8,7 +8,7 @@ Specific instructions
 1. Layers with priors
 - Run `evaluate.py` file in `Layer_priors` folder
 - Make sure libraries torch, numpy, matplotlib, pandas, cv2 are installed
-- It is preffered to run code on device with nvidia cuda
+- Preffered to run on hardware with GPU available and CUDA installed
 
 2. Morphological component analysis
 - Run `MCA.py` file in `Morphological_component_analysis` folder
