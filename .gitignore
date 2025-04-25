@@ -1,1 +1,3 @@
+# Ignore the python cache folders
 /__pycache__
+/Layer_Priors/__pycache__
