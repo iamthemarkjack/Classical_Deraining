@@ -111,8 +111,8 @@ def MCA(img):
     return mask
 
 # Example usage (replace with your paths)
-rain_folder = "Validation/Rain/"
-mask_folder = "Validation/Binary_mask/"
+rain_folder = "Validation set/Rain/"
+mask_folder = "Validation set/Binary_mask/"
 predictions_folder = "predictions"
 
 rain_images = sorted(os.listdir(rain_folder))
