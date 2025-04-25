@@ -44,3 +44,5 @@ Before running the code, make sure to install all dependencies listed in `requir
   - Patch size
   - Number of atoms in the dictionary
   - Number of patches used in dictionary learning
+
+A detailed report outlining the methodologies and providing examples of ouputs is attached.
