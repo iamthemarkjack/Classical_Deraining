@@ -15,7 +15,7 @@ from Calculate_IoU import calculate_iou
 val_rain_dir = r'../Validation Set/Rain'
 val_mask_dir = r'../Validation Set/Binary_mask'
 
-paths = os.listdir(val_rain_dir)
+filenames = os.listdir(val_rain_dir)
 
 # Create the Validation Predictions directory if doesn't exists already
 os.makedirs('Validation_Predictions', exist_ok=True)
@@ -23,9 +23,9 @@ os.makedirs('Validation_Predictions', exist_ok=True)
 # Array to store the IoU Scores
 scores = []
 
-for i, path in enumerate(paths):
-    img = plt.imread(os.path.join(val_rain_dir, path)) # Rainy Input Image
-    R_gt = plt.imread(os.path.join(val_mask_dir, path[:-4] + "masks.png")) # Ground Truth Rain Streak Layer
+for i, filename in enumerate(filenames):
+    img = plt.imread(os.path.join(val_rain_dir, filename)) # Rainy Input Image
+    R_gt = plt.imread(os.path.join(val_mask_dir, filename[:-4] + "masks.png")) # Ground Truth Rain Streak Layer
 
     # Initialize the Solver
     r = RainStreakRemoval(img)
@@ -36,11 +36,11 @@ for i, path in enumerate(paths):
     scores.append(iou_score)
 
     # Saving the predicted Binary mask
-    plt.imsave(f'Validation_Predictions/{path}', R_pred, cmap='gray')
-    print(f"Done with {path}.")
+    plt.imsave(f'Validation_Predictions/{filename}', R_pred, cmap='gray')
+    print(f"Done with {filename}.")
 
 # Saving the IoU Scores as a csv for reference
-pd.DataFrame({'Image': paths, 'IoU Score': scores}).to_csv(r'IoU_Scores_Layer_Priors.csv', index=False)
+pd.DataFrame({'Image': filename, 'IoU Score': scores}).to_csv(r'IoU_Scores_Layer_Priors.csv', index=False)
 
 print("Mean Score: ", np.mean(scores))
 print("Min Score: ", np.min(scores))
